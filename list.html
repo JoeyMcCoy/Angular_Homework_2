@@ -44,12 +44,13 @@
 		$scope.queryBy = '$'
         $http.get('tutorials.json').success(function(data) {
           $scope.tutorials = data;
-        });
-		$scope.predicate = 'author';
+        $scope.predicate = 'author';
 		$scope.reverse = true;
 		$scope.order = function(predicate) {
 		$scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
 		$scope.predicate = predicate;
+		});
+		
       });
     </script>
 </html>
