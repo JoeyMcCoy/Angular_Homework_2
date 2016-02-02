@@ -42,6 +42,8 @@
       tutorialsList.controller('TutorialCtrl', function ($scope, $http){
         $http.get('tutorials.json').success(function(data) {
           $scope.tutorials = data;
+		  $scope.query = {}
+		  $scope.queryBy = '$'
         
 		});
 
