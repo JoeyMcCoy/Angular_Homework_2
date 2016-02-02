@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- jQuery  -->
+<script src="jquery.js"></script>
+<!-- Minified Bootstrap script -->
+<script src="boot.js"></script>		
   </head>
   <body>
 	<nav class="navbar navbar-default navbar-static-top">
@@ -13,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Homework 5</a>
+          <a class="navbar-brand" href="#">AngularJS</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -25,7 +36,7 @@
     </nav>
 	    <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('angularjsgoogle.png')">
+    <header class="intro-header" style="background-image: url('angularjsgoogle.png');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -45,17 +56,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<h2 class="section-heading">An Introduction to AngularJS</h2>
-					<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
-
-                    <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
-
-                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-
-                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-
-                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-
-                    <h2 class="section-heading">First Things First</h2>
+					<p>AngularJS (commonly referred to as "Angular" or "Angular.js") is an open-source web 
+					application framework mainly maintained by Google and by a community of individuals and 
+					corporations to address many of the challenges encountered in developing single-page applications.</p>
+                    <p>The AngularJS library works by first reading the HTML page, which has embedded into it 
+					additional custom tag attributes. Angular interprets those attributes as directives to bind 
+					input or output parts of the page to a model that is represented by standard JavaScript variables. 
+					The values of those JavaScript variables can be manually set within the code, or retrieved from 
+					static or dynamic JSON resources.</p>
+					<p>AngularJS is the frontend part of the MEAN stack, together with Node.js runtime, 
+					Express.js backend framework and MongoDB database.</p>
+					
+					<h2 class="section-heading">First Things First</h2>
 
                     <p>In order to use AngularJS, you must add it in your project. You can do this by downloading the actual source code from <a target="_blank" href="https://angularjs.org">this website.</a>  Then, you need to reference the angular.min.js script in your html page after you add the script to your project folder.</p>
 
@@ -65,35 +77,60 @@
 						
 					<h2 class="section-heading">Including the Module</h2>
 
-                    <p>In order to use AngularJS, you must add it in your project. You can do this by downloading the actual source code from <a target="_blank" href="https://angularjs.org">this website.</a>  Then, you need to reference the angular.min.js script in your html page after you add the script to your project folder.</p>
+                    <p>After you have Angular in your project, you have to add a module to a script file.  
+					A module is created by using the AngularJS function "angular.module" within your script.
+					<br>This is what is should look like:</p>
+						<img class="img-responsive" src="module.PNG" alt=""><br>
 
-                    <p>You can also use Angular by referencing the CDN from your html page. <a target="_blank" href="https://cdnjs.com/libraries/angular.js/">Click here</a> to get the AngularJS CDN.   </p>
-					<p>This is how you reference the CDN in your project:</p>
-                        <img class="img-responsive" src="cdn.png" alt="">
+                    <p>Now you have to use the "ng-app" directive in your HTML page.  
+					This will bind the script file to your HTML. 
+					<br>This is what is should look like:</p>
+                        <img class="img-responsive" src="ngapp.PNG" alt=""><br>
 						
                     <h2 class="section-heading">Attaching a Controller</h2>
 
-                    <p>In order to use AngularJS, you must add it in your project. You can do this by downloading the actual source code from <a target="_blank" href="https://angularjs.org">this website.</a>  Then, you need to reference the angular.min.js script in your html page after you add the script to your project folder.</p>
+                    <p>AngularJS controllers control the data of AngularJS applications.  
+					These are regular JavaScript Objects.  We will start with the script file first. 
+					<br>The syntax for adding a script is as follows:</p>
+						<img class="img-responsive" src="controller.PNG" alt=""><br>
 
-                    <p>You can also use Angular by referencing the CDN from your html page. <a target="_blank" href="https://cdnjs.com/libraries/angular.js/">Click here</a> to get the AngularJS CDN.   </p>
-					<p>This is how you reference the CDN in your project:</p>
-                        <img class="img-responsive" src="cdn.png" alt="">
+                    <p>Now you have to define the controller inside your HTML page.  
+					The controller should be added where you want to interact with the data. 
+					<p>This is how you use the "ng-controller" directive in your HTML:</p>
+                        <img class="img-responsive" src="htmlcontrol.png" alt="">
 						
+					<h2 class="section-heading">Using Expressions</h2>
+
+                    <p>AngularJS expressions can be written inside double braces: 
+					{{ expression }}. AngularJS expressions can also be written inside 
+					a directive: ng-bind="expression". AngularJS will resolve the expression, 
+					and return the result exactly where the expression is written.</p>
+					<p>AngularJS expressions are much like JavaScript expressions: 
+					They can contain literals, operators, and variables. Example {{ 5 + 5 }} 
+					or {{ John + " " + Smith }} These expressions will evaluate to "10" and 
+					"John Smith", respectively.</p>
+                   
+					
 					<h2 class="section-heading">Using Directives</h2>
 
-                    <p>In order to use AngularJS, you must add it in your project. You can do this by downloading the actual source code from <a target="_blank" href="https://angularjs.org">this website.</a>  Then, you need to reference the angular.min.js script in your html page after you add the script to your project folder.</p>
-
-                    <p>You can also use Angular by referencing the CDN from your html page. <a target="_blank" href="https://cdnjs.com/libraries/angular.js/">Click here</a> to get the AngularJS CDN.   </p>
-					<p>This is how you reference the CDN in your project:</p>
-                        <img class="img-responsive" src="cdn.png" alt="">	
-						
+                    <p>AngularJS lets you extend HTML with new attributes called Directives.  
+					AngularJS has a set of built-in directives which offers functionality to 
+					your applications.  AngularJS also lets you define your own directives.</p>
+                    <p>AngularJS directives are extended HTML attributes with the prefix ng-. 
+					The ng-app directive initializes an AngularJS application. The ng-init 
+					directive initializes application data. The ng-model directive binds the 
+					value of HTML controls (input, select, textarea) to application data.</p>
+					
 					<h2 class="section-heading">Demo</h2>
-
-                    <p>In order to use AngularJS, you must add it in your project. You can do this by downloading the actual source code from <a target="_blank" href="https://angularjs.org">this website.</a>  Then, you need to reference the angular.min.js script in your html page after you add the script to your project folder.</p>
-
-                    <p>You can also use Angular by referencing the CDN from your html page. <a target="_blank" href="https://cdnjs.com/libraries/angular.js/">Click here</a> to get the AngularJS CDN.   </p>
-					<p>This is how you reference the CDN in your project:</p>
-                        <img class="img-responsive" src="cdn.png" alt="">		
+                    <p>I have created a demo that implements all of the above features that Angular offers.  
+					Below are some code snippets that I wrote in order to make this demo.  In addition to creating 
+					modules, controllers, and expressions, I have added some advanced sort and filter features 
+					that come with Angular.</p>
+					<a href="list.html">Click here to view the working demo!</a>
+					<h4>Code Snippets:</h4>
+					<h5>Full Script:</h5><img class="img-responsive" src="script.PNG" alt=""><br>
+					<h5>Full HTML Controller:</h5><img class="img-responsive" src="fullcontrollerhtml.PNG" alt=""><br><br>
+					<p>For the full documentation on AngularJS, click <a target="_blank" href="https://angular.io/docs/js/latest/">here</a>.</p>
                 </div>
             </div>
         </div>
