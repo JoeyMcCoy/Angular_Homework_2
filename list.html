@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html ng-app="tutorialsList">
   <head>
-
-	<script type="text/javascript" src="jquery.js"></script>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="application.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body ng-controller="TutorialCtrl">
-		<table>
-      <tr>
-        <th>Url</th>
-		<th>Title</th>
-        <th>Image</th>
-		<th>Author</th>
-      </tr>
-      <tr ng-repeat="item in tutorials">
-        <td>{{item.url}}</td>
-		<td>{{item.title}}</td>
-        <td>{{item.image}}</td>
-		<td>{{item.author}}</td>
-      </tr>
-    </table>
-
+		<h1 style="text-align: center; font-family: Trebuchet MS, Helvetica, sans-serif;">AngularJS Tutorials</h1>
+           <div class="input-group col-lg-12">
+				<input class="form-control" placeholder="Search by title or author" ng-model="query[queryBy]" /> 
+		   </div>
+				<div class="btn-group btn-group-justified" role="group" aria-label="...">
+					<div class="btn-group" role="group">
+						<button class="btn btn-default" ng-click="predicate=''">Set to unsorted</button>
+					</div>
+					<div class="btn-group" role="group">
+						<button class="btn btn-default" ng-click="order('title')">Sort By Title</button>
+						<span class="sortorder" ng-show="predicate === 'author'" ng-class="{reverse:reverse}"></span>
+					</div>
+					<div class="btn-group" role="group">
+						<button class="btn btn-default" ng-click="order('author')">Sort By Author</button>
+						<span class="sortorder" ng-show="predicate === 'author'" ng-class="{reverse:reverse}"></span>
+					</div>
+				</div>
+				<br>
+				<div class="well well-large" id="container" style="display:flex; justify-content: space-between;" ng-repeat="item in tutorials | filter:query | orderBy:predicate:reverse">
+					<div class="left">
+						<h2><img class="left" style="height:160px; width:160px;" src="{{item.image}}"/></h2>
+					</div>
+					<div class="right">
+						<h4 class="text-right">{{item.title}}</h4>
+						<h4 class="text-right"><a target="_blank" href="{{item.url}}">Go to Tutorial</a></h4>
+						<h4 class="text-right">By: {{item.author}}</h4>
+					</div>
+				</div>
   </body> 
   <script>
       var tutorialsList = angular.module('tutorialsList', []);
       tutorialsList.controller('TutorialCtrl', function ($scope, $http){
+	    $scope.query = {}
+		$scope.queryBy = '$'
         $http.get('tutorials.json').success(function(data) {
           $scope.tutorials = data;
         });
+		$scope.predicate = 'author';
+		$scope.reverse = true;
+		$scope.order = function(predicate) {
+		$scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+		$scope.predicate = predicate;
       });
     </script>
 </html>
